@@ -1,0 +1,41 @@
+*{
+    font-family: georgia, ;
+}
+
+header{
+    font-family: georgia; 
+    background-color: lavender;
+    text-align: center;
+}
+#title{
+     color:lightslategrey;
+}
+
+#homebtn{
+    margin-right: 30px;
+}
+
+#calendarbtn{
+    margin-left: 30px;
+}
+
+#searchbtn, #homebtn, #calendarbtn{
+     background-color: lightslategrey;
+     color: white;
+}
+
+#searchinput{
+     width: 300px;
+}
+
+#searchbtn{
+     height: 39px;
+}
+
+form{
+     text-align: center;
+     display: flex;
+     justify-content: center;
+     margin-top: 25px;
+}
+
