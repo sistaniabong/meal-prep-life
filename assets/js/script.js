@@ -23,6 +23,8 @@ var searchRecipes = function (value) {
         if (response.ok) {
           response.json().then(function (data) {
             console.log(data);
+            var recipes = data.results[i]
+          displayRecipes(recipes);  //Calls function to display recipes
           });
         } else {
           alert('Error: ' + response.statusText);
@@ -32,5 +34,38 @@ var searchRecipes = function (value) {
         alert('Unable to connect to the API');
       });
   };
+
+// Function to display the data from the API
+var recipeCard = $('.callout')
+var recipeTitle = $('.title')
+var recipeIngredients = $('.ingredients')
+var cookTime = $('.time')
+var recipeImg = $('.img')
+var recInstructions = $('.instructs')
+
+
+function displayRecipes(recipes){
+    
+
+    for(i=0; i < recipeDisplay.length; i++) { //displaying the recipe "card"
+        var recipeDisplay = recipeCard[i]
+        recipeDisplay.setAttribute("style", "display:block;")
+        
+        
+        for(i=0; i < recipes.length; i++){ //renders the recipe data to the "cards"
+            var recipes = data.results[i]
+            recipeTitle[i].textContent = recipes.title;
+            cookTime[i].textContent = recipes.readyInMinutes;
+            
+
+        }
+        
+
+    }
+
+ 
+
+}
+
 
 searchInputBtn.on('click',searchInputHandler); //click event handler that calls on searchInputHandler when the submit button is clicked

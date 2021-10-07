@@ -39,3 +39,6 @@ form{
      margin-top: 25px;
 }
 
+.callout{
+    display: none;
+}
