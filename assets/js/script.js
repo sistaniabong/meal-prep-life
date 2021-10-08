@@ -37,35 +37,52 @@ var searchRecipes = function (value) {
 
 // Function to display the data from the API
 var recipeCard = $('.callout')
-var recipeTitle = $('.title')
-var recipeIngredients = $('.ingredients')
+
 var cookTime = $('.time')
 var recipeImg = $('.img')
-var recInstructions = $('.instructs')
 
 
 function displayRecipes(recipes){
     console.log(recipes)
     
-    for(i=0; i < recipeCard.length; i++) { //displaying the recipe "card"
+    for(i=0; i<recipeCard.length; i++) { //displaying the recipe "card"
         var recipeDisplay = recipeCard[i]
         recipeDisplay.setAttribute("style", "display:block;")
         
-        for(i=0; i < 10; i++){ //renders the recipe data to the "cards"
+        
+        for(i=0; i < 11; i++){ //renders the recipe data to the "cards"
             // var recipes = data.results // This shows up as an error 
-            recipeTitle[i].textContent = recipes[i].title;
+            var recipeTitle = $('.title')
+            recipeTitle[i].innerText = recipes[i].title;
             cookTime[i].textContent = recipes[i].readyInMinutes + "mins";
             recipeImg[i].textContent = recipes[i].image;
-            
-            for(i=0; i < extendedIngredients.length; i++){
-                recipeIngredients[i].textContent = recipes[i].extendedIngredients;
-            } 
-            // recipeIngredients[i].textContent = recipes[i].extendedIngredients;
+            // console.log(recipes[i].image)
+            // console.log(recipes[i].title)
+            // console.log(recipes[i].readyInMinutes + "mins")
 
-            for(i=0; i < analyazedInstructions.lengths; i++){
-                recInstructions[i].textContent = recipes[i].analyzedInstructions[i];
+            //displays ingredients
+            let ingred = recipes[i].extendedIngredients.length
+            for(j=0; j < ingred; j++){
+                var recipeIngredients = $('.ingredients')
+                recipeIngredients[i].textContent = recipes[i].extendedIngredients[j].original;
+
+                // console.log(recipes[i].extendedIngredients[j].original)
+            } 
+            // displays instructions
+            let instruct = recipes[i].analyzedInstructions.length
+            for(n=0; n < instruct; n++){
+                var recInstructions = $('.instructs')
+                
+                //display actual step by step instructions
+                var steps = recipes[i].analyzedInstructions[n].steps.length;
+                for (k=0; k<steps; k++){
+                recInstructions[i].textContent = recipes[i].analyzedInstructions[n].steps[k].step
+
+                // console.log(recipes[i].analyzedInstructions[n].steps[k].step)
+                }
+                
             }
-            // recInstructions[i].textContent = recipes[i].analyzedInstructions;
+        
         }
         
 
