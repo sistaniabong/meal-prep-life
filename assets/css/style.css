@@ -1,6 +1,8 @@
 *{
-    font-family: georgia, ;
+    font-family: sans-serif;
 }
+
+
 
 header{
     font-family: georgia; 
@@ -41,4 +43,15 @@ form{
 
 .callout{
     display: none;
+    height: auto;
+    width: 500px;
+}
+
+.callout img{
+    height: auto;
+    width: 200px;
+}
+
+.button{
+    background-color:lightslategrey; 
 }

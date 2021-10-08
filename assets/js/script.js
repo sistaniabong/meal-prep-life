@@ -37,9 +37,9 @@ var searchRecipes = function (value) {
 
 // Function to display the data from the API
 var recipeCard = $('.callout')
-
+var recipeTitle = $('.title')
 var cookTime = $('.time')
-var recipeImg = $('.img')
+var recipeImg = $('.imgs')
 
 
 function displayRecipes(recipes){
@@ -52,10 +52,9 @@ function displayRecipes(recipes){
         
         for(i=0; i < 11; i++){ //renders the recipe data to the "cards"
             // var recipes = data.results // This shows up as an error 
-            var recipeTitle = $('.title')
-            recipeTitle[i].innerText = recipes[i].title;
+            recipeImg[i].src = recipes[i].image;
+            recipeTitle[i].textContent = recipes[i].title;
             cookTime[i].textContent = recipes[i].readyInMinutes + "mins";
-            recipeImg[i].textContent = recipes[i].image;
             // console.log(recipes[i].image)
             // console.log(recipes[i].title)
             // console.log(recipes[i].readyInMinutes + "mins")
@@ -64,33 +63,28 @@ function displayRecipes(recipes){
             let ingred = recipes[i].extendedIngredients.length
             for(j=0; j < ingred; j++){
                 var recipeIngredients = $('.ingredients')
-                recipeIngredients[i].textContent = recipes[i].extendedIngredients[j].original;
+                recipeIngredients[i].innerHTML = recipes[i].extendedIngredients[j].original + "<br>";
 
                 // console.log(recipes[i].extendedIngredients[j].original)
             } 
-            // displays instructions
-            let instruct = recipes[i].analyzedInstructions.length
+            // displays step by step instructions
+            let instruct = recipes[i].analyzedInstructions[0].steps.length
             for(n=0; n < instruct; n++){
                 var recInstructions = $('.instructs')
+                recInstructions[i].innerHTML = recipes[i].analyzedInstructions[0].steps[n].step + "<br>";
                 
+                console.log(recipes[i].analyzedInstructions[n].steps[k].step)
                 //display actual step by step instructions
-                var steps = recipes[i].analyzedInstructions[n].steps.length;
-                for (k=0; k<steps; k++){
-                recInstructions[i].textContent = recipes[i].analyzedInstructions[n].steps[k].step
+                // var steps = recipes[i].analyzedInstructions[n].steps.length;
+                // for (k=0; k<steps; k++){
+                // recInstructions[i].innerHTML = recipes[i].analyzedInstructions[n].steps[k].step + "<br>";
 
                 // console.log(recipes[i].analyzedInstructions[n].steps[k].step)
-                }
-                
+                // }
             }
-        
         }
-        
-
     }
-
- 
-
-}
+};
 
 
 searchInputBtn.on('click',searchInputHandler); //click event handler that calls on searchInputHandler when the submit button is clicked
