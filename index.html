@@ -35,18 +35,6 @@
           placeholder = "recipeName">
           
 
-function savelocalStorage(){
-  const recipes = () => {
-      const searchRecipes = localStorage.getItem('searchRecipes');
-      return searchRecipes === null ? []: JSON.parse(searchRecipes);
-    }();
-    
-  // Use .setItem() to store object in storage and JSON.stringify to convert it as a string
-  localStorage.setItem("searchedRecipes", JSON.stringify(recipes));
-
- recipes.push({"name": "John","day": "Monday", "Recipe": data.results})
-  
-
 
 
 
