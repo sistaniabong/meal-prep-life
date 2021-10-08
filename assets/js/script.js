@@ -34,3 +34,18 @@ var searchRecipes = function (value) {
   };
 
 searchInputBtn.on('click',searchInputHandler); //click event handler that calls on searchInputHandler when the submit button is clicked
+
+
+
+function savelocalStorage(){
+  const recipes = () => {
+      const searchRecipes = localStorage.getItem('searchRecipes');
+      return searchRecipes === null ? []: JSON.parse(searchRecipes);
+    }();
+  
+  recipes.push({"name": "John","day": "Monday", "Recipe": data.results})
+  
+  
+  localStorage.setItem("searchRecipes", JSON.stringify(recipes));
+
+
