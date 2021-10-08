@@ -23,7 +23,7 @@ var searchRecipes = function (value) {
         if (response.ok) {
           response.json().then(function (data) {
             console.log(data);
-            var recipes = data.results[i]
+            var recipes = data.results
           displayRecipes(recipes);  //Calls function to display recipes
           });
         } else {
@@ -45,19 +45,27 @@ var recInstructions = $('.instructs')
 
 
 function displayRecipes(recipes){
+    console.log(recipes)
     
-
-    for(i=0; i < recipeDisplay.length; i++) { //displaying the recipe "card"
+    for(i=0; i < recipeCard.length; i++) { //displaying the recipe "card"
         var recipeDisplay = recipeCard[i]
         recipeDisplay.setAttribute("style", "display:block;")
         
-        
-        for(i=0; i < recipes.length; i++){ //renders the recipe data to the "cards"
-            var recipes = data.results[i]
-            recipeTitle[i].textContent = recipes.title;
-            cookTime[i].textContent = recipes.readyInMinutes;
+        for(i=0; i < 10; i++){ //renders the recipe data to the "cards"
+            // var recipes = data.results // This shows up as an error 
+            recipeTitle[i].textContent = recipes[i].title;
+            cookTime[i].textContent = recipes[i].readyInMinutes + "mins";
+            recipeImg[i].textContent = recipes[i].image;
             
+            for(i=0; i < extendedIngredients.length; i++){
+                recipeIngredients[i].textContent = recipes[i].extendedIngredients;
+            } 
+            // recipeIngredients[i].textContent = recipes[i].extendedIngredients;
 
+            for(i=0; i < analyazedInstructions.lengths; i++){
+                recInstructions[i].textContent = recipes[i].analyzedInstructions[i];
+            }
+            // recInstructions[i].textContent = recipes[i].analyzedInstructions;
         }
         
 
