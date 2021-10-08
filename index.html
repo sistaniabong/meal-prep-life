@@ -23,6 +23,43 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="assets/js/script.js"></script>
+
+
+<p><button class="button" data-open="modalOne">add to your calendar</button></p>
+
+
+    <div class="reveal" id="modalOne" data-reveal>
+        <h1>Add new recipe to your meal planner.</h1>
+          <label for ='name-input'> Name: </label>
+          <input type ="text" class = "form-control" id="name-input"
+          placeholder = "recipeName">
+          
+
+function savelocalStorage(){
+  const recipes = () => {
+      const searchRecipes = localStorage.getItem('searchRecipes');
+      return searchRecipes === null ? []: JSON.parse(searchRecipes);
+    }();
+    
+  // Use .setItem() to store object in storage and JSON.stringify to convert it as a string
+  localStorage.setItem("searchedRecipes", JSON.stringify(recipes));
+
+ recipes.push({"name": "John","day": "Monday", "Recipe": data.results})
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </body>
 
 </html>
