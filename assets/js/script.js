@@ -1,6 +1,6 @@
 var searchInputEl = $('#searchinput'); //select input box element
 var searchInputBtn = $('#searchbtn'); //select submit button
-var recipeDisplay = $('#recipe-display');
+var recipeDisplay = $('.body');
 
 
 var APIKey = '57ab872734244de8a87dcb2f4110abb7'; //API key for spoonacular
@@ -38,9 +38,9 @@ var searchRecipes = function (value) {
 
 // Function to display the data from the API
 // var recipeCard = $('.callout')
-var recipeTitle = $('.title')
-var cookTime = $('.time')
-var recipeImg = $('.imgs')
+// var recipeTitle = $('.title')
+// var cookTime = $('.time')
+// var recipeImg = $('.imgs')
 
 
 function displayRecipes(recipes){
@@ -54,31 +54,41 @@ function displayRecipes(recipes){
     // }
     // else{
     
+    // recipeDisplay.append($('<p>').text('balsfhasjfhdsjf'))
     for(var i=0; i<recipes.length; i++) { //displaying the recipe "card"
         // var recipeDisplay = recipeCard[i]
         // recipeDisplay.setAttribute("style", "display:block;")
         
-        var recipe = recipes[i]
-        var recipeEl = $("<div>").addClass("callout success")
-        var imgEl = $("<img>").attr({"class":"img", "src":recipe.image})
-        recipeEl.append(imgEl)
-        var titleEl = $("<h5>").attr({"class":"title"}).text(recipe.title)
-        var timeEl = $("<p>").attr({"class": "time"}).text("Cooking time: " + recipe.readyInMinutes + "mins")
-        var buttonEl = $("<button>").attr({"class":"btn"}).text("Add to Your Calendar")
-        
-
-        recipeEl.append(imgEl)
-        recipeEl.append(titleEl)
+        var recipe = recipes[i];
+        // console.log(recipe)
+        var recipeEl = $("<div>").attr({"class": "displayContainer"}).css({'border': '3px solid #466786','border-radius': '.3rem', 'background-color':'rgb(15, 144, 153)', 'height': '72%', 'padding': '10px', "width":"50%"})
+        // console.log(recipeEl)
+        var imgEl = $("<img>").attr({"class":"img", "src":recipe.image});
+        recipeEl.append(imgEl);
+        // console.log(imgEl)
+        var titleEl = $("<h5>").attr({"class":"title"}).text(recipe.title);
+        recipeEl.append(titleEl);
+        // console.log(titleEl)
+        var timeEl = $("<p>").attr({"class": "time"}).text("Cooking time: " + recipe.readyInMinutes + "mins");
         recipeEl.append(timeEl)
-        recipeEl.append(buttonEl)
-        recipeDisplay.append(recipeEl)
-        
-        console.log(recipe)
-        console.log(recipeEl)
-        console.log(imgEl)
-        console.log(titleEl)
         console.log(timeEl)
+        var buttonEl = $("<button>").attr({"id":"searchbtn"}).text("Add to Your Calendar");
+        
+        recipeEl.append(buttonEl)
         console.log(buttonEl)
+        // buttonEl.on("click",addRecipeHandler)
+        
+        recipeDisplay.append(recipeEl)
+        // recipeDisplay.append($('<p>').text('balsfhasjfhdsjf'))
+
+
+        
+        // console.log(recipe)
+        // console.log(recipeEl)
+        // console.log(imgEl)
+        // console.log(titleEl)
+        // console.log(timeEl)
+        // console.log(buttonEl)
         
         // for(i=0; i < 11; i++){ //renders the recipe data to the "cards"
         //     // var recipes = data.results // This shows up as an error 
@@ -106,9 +116,12 @@ function displayRecipes(recipes){
         //     //     console.log(recipes[i].analyzedInstructions[0].steps[n].step)
         //     // }
         // }
-    }
     // }
+    }
 };
 
+// function addRecipeHandler(){
+
+}
 
 searchInputBtn.on('click',searchInputHandler); //click event handler that calls on searchInputHandler when the submit button is clicked

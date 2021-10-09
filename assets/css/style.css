@@ -24,6 +24,7 @@ header{
 #searchbtn, #homebtn, #calendarbtn{
      background-color: lightslategrey;
      color: white;
+     padding: 10px;
 }
 
 #searchinput{
