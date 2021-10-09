@@ -54,5 +54,19 @@ form{
 }
 
 .button{
-    background-color:lightslategrey; 
+    background-color:lightslategrey;
 }
+
+#no-results{
+    display: none;
+}
+
+.displayContainer{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 30%;
+    
+}
+
