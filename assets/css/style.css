@@ -1,6 +1,8 @@
 *{
-    font-family: georgia, ;
+    font-family: sans-serif;
 }
+
+
 
 header{
     font-family: georgia; 
@@ -22,6 +24,7 @@ header{
 #searchbtn, #homebtn, #calendarbtn{
      background-color: lightslategrey;
      color: white;
+     padding: 10px;
 }
 
 #searchinput{
@@ -37,5 +40,33 @@ form{
      display: flex;
      justify-content: center;
      margin-top: 25px;
+}
+
+.callout{
+    display: none;
+    height: auto;
+    width: 500px;
+}
+
+.callout img{
+    height: auto;
+    width: 200px;
+}
+
+.button{
+    background-color:lightslategrey;
+}
+
+#no-results{
+    display: none;
+}
+
+.displayContainer{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 30%;
+    
 }
 
