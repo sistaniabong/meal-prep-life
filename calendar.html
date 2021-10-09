@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- "Foundation" CSS framework-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/style.css"></link>
+    <title>Meal Prep Life</title>
+</head>
+<body>
+    <header class="userHeader">
+        <h1 id="userMealPlan"></h1>
+        <h2 id="currentDay"></h2>
+        <div class="reveal" id="exampleModal1" data-reveal>
+            <img id="recipeImg" src="#">
+            <h1 id="title"></h1>
+            <h2 id="time"></h2>
+            <h2 id="servings"></h2>
+            <button class="startBtn" type="button">Start Cooking</button>
+            <button class="close-button" data-close aria-label="Close modal" type="button">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+    </header>
+    <main>
+
+        <div class="row">
+            <div class="columns">
+              <ul class="accordion" data-accordion data-multi-expand="true">
+
+            <li class="accordion-item" data-accordion-item>
+              <a href="#" class="accordion-title monday">Monday</a>
+              <div class="accordion-content" data-tab-content >
+              </div>
+            </li>
+            <li class="accordion-item" data-accordion-item>
+                <a href="#" class="accordion-title tuesday">Tuesday</a>
+                <div class="accordion-content" data-tab-content >
+
+                </div>
+            </li>
+            <li class="accordion-item" data-accordion-item>
+                <a href="#" class="accordion-title wednesday">Wednesday</a>
+                <div class="accordion-content" data-tab-content >
+                </div>
+            </li>
+            <li class="accordion-item" data-accordion-item>
+                <a href="#" class="accordion-title thursday">Thursday</a>
+                <div class="accordion-content" data-tab-content >
+                </div>
+            </li>
+            <li class="accordion-item" data-accordion-item>
+                <a href="#" class="accordion-title friday">Friday</a>
+                <div class="accordion-content" data-tab-content >
+                </div>
+            </li>
+            <li class="accordion-item" data-accordion-item>
+                <a href="#" class="accordion-title saturday">Saturday</a>
+                <div class="accordion-content" data-tab-content >
+             </div>
+            </li>
+            <li class="accordion-item" data-accordion-item>
+                <a href="#" class="accordion-title sunday">Sunday</a>
+                <div class="accordion-content" data-tab-content >
+                </div>
+            </li>
+          </ul>
+            </div>
+          </div>
+
+
+    </main>
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js" integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
+    <script>
+        $(document).foundation();
+      </script>
+    <script src="assets/js/cal-script.js"></script>
+</body>
+
+</html>

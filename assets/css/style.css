@@ -1,6 +1,9 @@
 *{
     font-family: sans-serif;
 }
+body{
+     background-color: whitesmoke;
+}
 
 
 
@@ -11,6 +14,14 @@ header{
 }
 #title{
      color:lightslategrey;
+}
+
+.recipeBtn, .startBtn{
+     background-color: lightslategrey;
+     color: white;
+     padding: 5px;
+     border-radius: 7px;
+     height: 39px;
 }
 
 #homebtn{
@@ -24,7 +35,10 @@ header{
 #searchbtn, #homebtn, #calendarbtn{
      background-color: lightslategrey;
      color: white;
+     border-radius: 7px;
+
      padding: 10px;
+
 }
 
 #searchinput{
@@ -40,6 +54,11 @@ form{
      display: flex;
      justify-content: center;
      margin-top: 25px;
+}
+
+
+.accordion-title{
+     font-size: 20px;
 }
 
 .callout{

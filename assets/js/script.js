@@ -16,7 +16,6 @@ function searchInputHandler(event){
 
 // fx that makes API call based on the input search value
 var searchRecipes = function (value) {
-    console.log()
     var queryURL = "https://api.spoonacular.com/recipes/complexSearch?query=" + value + "&addRecipeInformation=true" + "&fillIngredients=true" + "&apiKey=" + APIKey;
   
     fetch(queryURL)
@@ -35,6 +34,7 @@ var searchRecipes = function (value) {
         alert('Unable to connect to the API');
       });
   };
+
 
 function displayRecipes(recipes){
     console.log(recipes)
@@ -81,4 +81,8 @@ function displayRecipes(recipes){
 // 
 // }
 
+
 searchInputBtn.on('click',searchInputHandler); //click event handler that calls on searchInputHandler when the submit button is clicked
+
+
+
