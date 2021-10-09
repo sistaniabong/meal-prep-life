@@ -1,6 +1,6 @@
 var searchInputEl = $('#searchinput'); //select input box element
 var searchInputBtn = $('#searchbtn'); //select submit button
-var recipeDisplay = $('.body');
+var recipeDisplay = $('.recipe-display');
 
 
 var APIKey = '57ab872734244de8a87dcb2f4110abb7'; //API key for spoonacular
@@ -42,12 +42,12 @@ function displayRecipes(recipes){
     if (recipes == 0 ){ 
         $("#no-results").css({"display":"inline", "font-size":"50px"})
         // $("#no-resultsimg").src("")  //figure out how to add img
-        $(".displayContainer").remove();
+        recipeDisplay.remove();
         searchInputEl.empty(); //should empty the search bar
 
     }
     else {
-    
+    recipeDisplay.empty();
     for(var i=0; i<recipes.length; i++) { //displaying the recipe "card"
         $("#no-results").empty();
         var recipe = recipes[i];
@@ -74,9 +74,7 @@ function displayRecipes(recipes){
         
     }
     }
-    // else if (recipeDisplay{
 
-    // }
 };
 
 // function addRecipeHandler(){
