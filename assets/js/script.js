@@ -15,7 +15,6 @@ function searchInputHandler(event){
 
 // fx that makes API call based on the input search value
 var searchRecipes = function (value) {
-    console.log()
     var queryURL = "https://api.spoonacular.com/recipes/complexSearch?query=" + value + "&addRecipeInformation=true" + "&fillIngredients=true" + "&apiKey=" + APIKey;
   
     fetch(queryURL)
@@ -33,4 +32,22 @@ var searchRecipes = function (value) {
       });
   };
 
+function saveLocalStorage(data){
+    const recipes = (() => {
+        const searchedRecipes = localStorage.getItem('searchedRecipes');
+        return searchedRecipes === null ? []: JSON.parse(searchedRecipes);
+      })();
+    
+    recipes.push({"name": "Sistania","day": "Saturday", "Recipe": data.results[4]})
+    
+    // Use .setItem() to store object in storage and JSON.stringify to convert it as a string
+    localStorage.setItem("searchedRecipes", JSON.stringify(recipes));
+
+}
+
+
+
 searchInputBtn.on('click',searchInputHandler); //click event handler that calls on searchInputHandler when the submit button is clicked
+
+
+
