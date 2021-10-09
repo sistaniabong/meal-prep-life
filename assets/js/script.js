@@ -11,7 +11,6 @@ function searchInputHandler(event){
     var searchVal = searchInputEl.val();
     console.log(searchVal);
     searchRecipes(searchVal);
-
 }
 
 // fx that makes API call based on the input search value
@@ -25,6 +24,7 @@ var searchRecipes = function (value) {
             console.log(data);
             var recipes = data.results
           displayRecipes(recipes);  //Calls function to display recipes
+          saveLocalStorage(data);
           });
         } else {
           alert('Error: ' + response.statusText);
@@ -76,6 +76,19 @@ function displayRecipes(recipes){
     }
 
 };
+
+function saveLocalStorage(data){
+    const recipes = (() => {
+        const searchedRecipes = localStorage.getItem('searchedRecipes');
+        return searchedRecipes === null ? []: JSON.parse(searchedRecipes);
+      })();
+    
+    recipes.push({"name": "Sistania","day": "Saturday", "Recipe": data.results[4]})
+    
+    // Use .setItem() to store object in storage and JSON.stringify to convert it as a string
+    localStorage.setItem("searchedRecipes", JSON.stringify(recipes));
+
+}
 
 // function addRecipeHandler(){
 // 

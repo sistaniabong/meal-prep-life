@@ -62,11 +62,10 @@ function previewRecipe(event){
     
 }
 
-function renderRecipeDetail(event){
-    console.log(event.currentTarget.id);
+function redirectHandler(event){
+    var day = event.currentTarget.id;
+    location.href = './recipe.html?day=' + day;
 }
-
-
 
 
 
@@ -74,4 +73,4 @@ displayHeader();
 selectToday();
 populateCal();
 $('.recipeBtn').on('click', previewRecipe);
-$('.startBtn').on('click',renderRecipeDetail);
+$('.startBtn').on('click',redirectHandler);
