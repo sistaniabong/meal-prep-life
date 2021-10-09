@@ -17,7 +17,7 @@ function searchInputHandler(event){
 // fx that makes API call based on the input search value
 var searchRecipes = function (value) {
     console.log()
-    var queryURL = "https://api.spoonacular.com/recipes/complexSearch?query=" + value + "&addRecipeInformation=true" + "&fillIngredients=true" + "&apiKey=" + APIKeyReagin;
+    var queryURL = "https://api.spoonacular.com/recipes/complexSearch?query=" + value + "&addRecipeInformation=true" + "&fillIngredients=true" + "&apiKey=" + APIKey;
   
     fetch(queryURL)
       .then(function (response) {
