@@ -16,11 +16,13 @@ header{
 }
 
 .recipeBtn, .startBtn{
-    background-color: lightslategrey;
-    color: white;
-    padding: 5px;
-    border-radius: 7px;
-    height: 39px;
+
+     background-color: lightslategrey;
+     color: white;
+     padding: 5px;
+     border-radius: 7px;
+     height: 39px;
+     margin: 0 10px;
 }
 
 #homebtn{
@@ -32,15 +34,19 @@ header{
 }
 
 #searchbtn, #homebtn, #calendarbtn{
-    background-color: lightslategrey;
-    color: white;
-    border-radius: 7px;
-    padding: 10px;
 
+     background-color: lightslategrey;
+     color: white;
+     border-radius: 7px;
+     padding: 10px;
+     margin-top: 25px;
+     margin-bottom: 16px;
 }
 
 #searchinput{
-    width: 300px;
+     width: 300px;
+     border-radius: 7px;
+     padding: 10px;
 }
 
 #searchbtn{
@@ -48,10 +54,10 @@ header{
 }
 
 form{
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    margin-top: 25px;
+     display: flex;
+     justify-content: center;
+     margin-top: 25px;
+     align-items: center;
 }
 
 
@@ -85,6 +91,39 @@ form{
     justify-content: center;
     margin-left: 30%;
 }
+
+
+/* .unitConversion{
+     text-align: center;
+     display: flex;
+     justify-content: center;
+     margin-top: 25px;
+} */
+
+.conversion{
+     list-style-type: none;
+}
+
+/* .convertTitle{
+     display:block;
+} */
+
+#searchinput{
+     display: flex;
+     justify-content: center;
+     margin-top: 25px;
+}
+
+th{
+     font-weight:100;
+     text-align:left;
+}
+
+
+.card-divider{
+     background-color:lavender;
+     font-size: 20px;
+     font-weight: bold;
 
 /* recipe.html */
 #container {

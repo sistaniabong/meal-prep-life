@@ -43,11 +43,9 @@ function populateCal(){
 }
 
 function previewRecipe(event){
-    console.log(event);
-    console.log(event.currentTarget.id);
-    var dayID = event.currentTarget.id;
+    var id = event.currentTarget.id;
     // var day = dayID.split('Btn')[0];
-    var whichRecipe = dayID.split('-')[1];
+    var whichRecipe = id.split('-')[1];
     var recipeIndex = parseInt(whichRecipe);
     console.log(recipeIndex)
     var recipes = JSON.parse(localStorage.getItem('searchedRecipes'));
@@ -58,19 +56,6 @@ function previewRecipe(event){
     $('#time').text("Cooking Time: "+recipe.readyInMinutes+" mins").css({'font-size':'20px', 'color':'lightslategrey'});
     $('#servings').text("Servings: "+recipe.servings).css({'font-size':'20px', 'color':'lightslategrey'});
     $('.startBtn').attr({'id':recipeIndex});
-
-    // for (var i=0;i<recipes.length;i++){
-    //     console.log(recipes[i].day)
-    //     if (day==recipes[i].day) {
-    //         var recipe = recipes[i].Recipe;
-    //         console.log(recipe)  
-    //         $('#recipeImg').attr({"src":recipe.image});
-    //         $('#title').text(recipe.title).css({'font-size':'30px','font-weight':"bold"});
-    //         $('#time').text("Cooking Time: "+recipe.readyInMinutes+" mins").css({'font-size':'20px', 'color':'lightslategrey'});
-    //         $('#servings').text("Servings: "+recipe.servings).css({'font-size':'20px', 'color':'lightslategrey'});
-    //         $('.startBtn').attr({'id':day});
-    //     }
-    // }
     
 }
 

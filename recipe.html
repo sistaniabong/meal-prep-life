@@ -24,6 +24,38 @@
         <a href="./calendar.html" target=”_blank” id="calendarbtn" class="med button">Calendar</a> 
     </header>
 
+    <div class="card" style="width: 400px;">
+        <div class="card-divider">
+            Nutrition Checker
+        </div>
+        <div class="card-section">
+            <ul class="conversion">
+                <li>
+                    <!-- <p class="conversion">Value:</p> -->
+                    <input class="searchinput" id="value" type="text" placeholder="1 cup of rice"/>
+                </li>
+                <input id="searchbtn" type="submit" value="Analyze">
+                <!-- <button type="button"></button> -->
+            </ul>
+        </div>
+        <div class="card-section result">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Ingredient</th>
+                        <th>Calories</th>
+                        <th>Weight</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <th id="food"></th>
+                    <th id="cal"></th>
+                    <th id="weight"></th>
+                </tbody>
+            </table>
+        </div>
+      </div>
+
     <main id="recipedisplay">
         <h3 id="titledisplay"></h3>
         <img id="imagedisplay"/>
