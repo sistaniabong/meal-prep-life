@@ -2,6 +2,8 @@ var displayRecipe = $("#recipedisplay")
 var titleDisplay = $("#titledisplay")
 var imgDisplay = $("#imagedisplay")
 var timeDisplay = $("#timedisplay")
+var ingredContainer = $("#foringredients")
+var instructContainer = $("#forinstructions")
 
 var getRecipeInfo = function(){
     var getRecipes = JSON.parse(localStorage.getItem('searchedRecipes'));
@@ -14,42 +16,29 @@ var getRecipeInfo = function(){
     var recipeCookTime = recipeToDisplay.Recipe.readyInMinutes
     var recipeImg = recipeToDisplay.Recipe.image
     var recipeIngred = recipeToDisplay.Recipe.extendedIngredients
-    var recipeInstruct = recipeToDisplay.Recipe.analyzedInstructions
-    console.log(recipeIngred)
+    var recipeInstruct = recipeToDisplay.Recipe.analyzedInstructions[0].steps
+    
 
     titleDisplay.text(recipeTitle);
     imgDisplay.attr({"src":recipeImg});
     timeDisplay.text("Cooking time: " + recipeCookTime + "mins")
     displayRecipe.append(titleDisplay, imgDisplay, timeDisplay)
 
+    //rendering Ingredients with checkboxes
     for (var i=0; i<recipeIngred.length; i++){
-        recipeIngredients = recipeIngred[i].original
-        var showIngred = $("<input>").attr({"type":"checkbox"}).css({"display":"inline-block"}).text(recipeIngredients)
-        displayRecipe.append(showIngred);
-        console.log(recipeIngredients)
+        var recipeIngredients = recipeIngred[i].original
+        var showCheckbox = $("<input>").attr({"type":"checkbox", "class":"ingredcheckbox"})
+        var showIngred = $("<label>").css({"display":"block"}).innerHTML = recipeIngredients + "<br/>"
+        ingredContainer.append(showCheckbox, showIngred);
+    }
+    
+    for (var i=0; i<recipeInstruct.length; i++){
+        var instructions = recipeInstruct[i].step
+        var showCheckbox = $("<input>").attr({"type":"checkbox", "class":"instructcheckbox"})
+        var showInstruct = $("<label>").css({"display":"block"}).innerHTML = instructions + "<br/>"
+        instructContainer.append(showCheckbox, showInstruct)
     }
 
-
-
-
-    
-    // var recipeIngred = 
-    // var recipeInstruct = 
-    console.log(recipeNum)
-// console.log(localStorage.searchedRecipes)
-    // if (recipeTitle) {
-    //     var title = $("</p>").textContent = recipeTitle;
-    //     $("main").append(title)
-
-    //when displaying the recipe add type of checkbox
-    
-
-    
-    //     // getRepoIssues(repoName);
-    // } 
-    // else {
-    //     document.location.replace('./index.html');
-    //   }
 };
 
 getRecipeInfo();
