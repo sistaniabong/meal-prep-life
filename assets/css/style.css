@@ -1,22 +1,22 @@
 *{
-    font-family: sans-serif;
+    font-family: Open Sans, sans-serif;
 }
 body{
-     background-color: whitesmoke;
+    background-color: whitesmoke;
 }
 
-
-
 header{
-    font-family: georgia; 
     background-color: lavender;
     text-align: center;
 }
 #title{
-     color:lightslategrey;
+    color:lightslategrey;
+    font-family: Caveat, sans-serif;
+    font-size: 75px;
 }
 
 .recipeBtn, .startBtn{
+
      background-color: lightslategrey;
      color: white;
      padding: 5px;
@@ -34,6 +34,7 @@ header{
 }
 
 #searchbtn, #homebtn, #calendarbtn{
+
      background-color: lightslategrey;
      color: white;
      border-radius: 7px;
@@ -49,11 +50,10 @@ header{
 }
 
 #searchbtn{
-     height: 39px;
+    height: 39px;
 }
 
 form{
-     /* text-align: center; */
      display: flex;
      justify-content: center;
      margin-top: 25px;
@@ -62,7 +62,7 @@ form{
 
 
 .accordion-title{
-     font-size: 20px;
+    font-size: 20px;
 }
 
 .callout{
@@ -90,8 +90,8 @@ form{
     flex-direction: column;
     justify-content: center;
     margin-left: 30%;
-    
 }
+
 
 /* .unitConversion{
      text-align: center;
@@ -124,4 +124,40 @@ th{
      background-color:lavender;
      font-size: 20px;
      font-weight: bold;
+
+/* recipe.html */
+#container {
+    display: flex;
+    flex-direction: column;
+}
+
+#titledisplay, #timedisplay{
+    text-align: center; 
+    font-weight: bolder;
+}
+
+#imagedisplay{
+    margin-left: 38%;
+}
+
+p{
+    font-weight: bold;
+}
+
+#foringredients{
+    margin-left: 10px;
+    position: absolute;
+} 
+
+#forinstructions{
+    margin-left: 40%;
+}
+
+.vl {
+    border-left: 2px solid lightslategrey;
+    height: 450px;
+    position: absolute;
+    left: 30%;
+    margin-left: -3px;
+    top: 500px;
 }

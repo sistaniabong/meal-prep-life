@@ -6,13 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- "Foundation" CSS framework-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Open+Sans&display=swap" rel="stylesheet">
+    <!-- CSS -->
     <link rel="stylesheet" href="./assets/css/style.css"></link>
     <title>Recipe</title>
 </head>
 <body>
-
-    <main>
-    </main>
+    <header>
+        <h1 id="title">Meal Prep Life</h1>
+        <a href="./index.html" id="homebtn" class="med button">Home</a> 
+        <a href="./calendar.html" target=”_blank” id="calendarbtn" class="med button">Calendar</a> 
+    </header>
 
     <div class="card" style="width: 400px;">
         <div class="card-divider">
@@ -45,6 +55,22 @@
             </table>
         </div>
       </div>
+
+    <main id="recipedisplay">
+        <h3 id="titledisplay"></h3>
+        <img id="imagedisplay"/>
+        <p id="timedisplay"></p>
+    </main>
+
+    <article id="container">
+    <section id="foringredients">
+        <p>Ingredients</p>
+    </section>
+    <div class="vl"></div>
+    <section id="forinstructions">
+        <p>Instructions</p>
+    </section>
+    </article>
 
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
