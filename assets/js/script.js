@@ -3,7 +3,7 @@ var searchInputBtn = $('#searchbtn'); //select submit button
 var recipeDisplay = $('.recipe-display');
 
 
-var APIKey = '57ab872734244de8a87dcb2f4110abb7'; //API key for spoonacular
+var APIKey = "49c0740aebdf47ebacf6832cdff2c7c4"; //API key for spoonacular
 var APIKeyReagin = "17f44d660ddb486fa6457a9e29671fd3";
 // fx to get search value and call on searchRecipes() fx to make API call 
 function searchInputHandler(event){
@@ -60,7 +60,7 @@ function displayRecipes(recipes){
         var titleEl = $("<h5>").attr({"class":"title"}).text(recipe.title);
         recipeEl.append(titleEl);
         // console.log(titleEl)
-        var timeEl = $("<p>").attr({"class": "time"}).text("Cooking time: " + recipe.readyInMinutes + "mins");
+        var timeEl = $("<p>").attr({"class": "time"}).text("Cooking time: " + recipe.readyInMinutes + " mins");
         recipeEl.append(timeEl)
         // console.log(timeEl)
         var buttonEl = $("<button>").attr({"id":"searchbtn"}).text("Add to Your Calendar");
@@ -83,7 +83,7 @@ function saveLocalStorage(data){
         return searchedRecipes === null ? []: JSON.parse(searchedRecipes);
       })();
     
-    recipes.push({"name": "Sistania","day": "Saturday", "Recipe": data.results[4]})
+    recipes.push({"name": "Sistania","day": "Saturday", "Recipe": data.results[0]})
     
     // Use .setItem() to store object in storage and JSON.stringify to convert it as a string
     localStorage.setItem("searchedRecipes", JSON.stringify(recipes));
