@@ -27,14 +27,14 @@ var getRecipeInfo = function(){
     //rendering Ingredients with checkboxes
     for (var i=0; i<recipeIngred.length; i++){
         var recipeIngredients = recipeIngred[i].original
-        var showCheckbox = $("<input>").attr({"type":"checkbox", "class":"ingredcheckbox"})
+        var showCheckbox = $("<input>").attr({"type":"checkbox", "class":"ingredcheckbox"}).css({"margin-right":"5px"})
         var showIngred = $("<label>").css({"display":"block"}).innerHTML = recipeIngredients + "<br/>"
         ingredContainer.append(showCheckbox, showIngred);
     }
     
     for (var i=0; i<recipeInstruct.length; i++){
         var instructions = recipeInstruct[i].step
-        var showCheckbox = $("<input>").attr({"type":"checkbox", "class":"instructcheckbox"})
+        var showCheckbox = $("<input>").attr({"type":"checkbox", "class":"instructcheckbox"}).css({"margin-right":"5px"})
         var showInstruct = $("<label>").css({"display":"block"}).innerHTML = instructions + "<br/>"
         instructContainer.append(showCheckbox, showInstruct)
     }

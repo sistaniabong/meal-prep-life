@@ -1,27 +1,26 @@
 *{
-    font-family: sans-serif;
+    font-family: Open Sans, sans-serif;
 }
 body{
-     background-color: whitesmoke;
+    background-color: whitesmoke;
 }
 
-
-
 header{
-    font-family: georgia; 
     background-color: lavender;
     text-align: center;
 }
 #title{
-     color:lightslategrey;
+    color:lightslategrey;
+    font-family: Caveat, sans-serif;
+    font-size: 75px;
 }
 
 .recipeBtn, .startBtn{
-     background-color: lightslategrey;
-     color: white;
-     padding: 5px;
-     border-radius: 7px;
-     height: 39px;
+    background-color: lightslategrey;
+    color: white;
+    padding: 5px;
+    border-radius: 7px;
+    height: 39px;
 }
 
 #homebtn{
@@ -33,32 +32,31 @@ header{
 }
 
 #searchbtn, #homebtn, #calendarbtn{
-     background-color: lightslategrey;
-     color: white;
-     border-radius: 7px;
-
-     padding: 10px;
+    background-color: lightslategrey;
+    color: white;
+    border-radius: 7px;
+    padding: 10px;
 
 }
 
 #searchinput{
-     width: 300px;
+    width: 300px;
 }
 
 #searchbtn{
-     height: 39px;
+    height: 39px;
 }
 
 form{
-     text-align: center;
-     display: flex;
-     justify-content: center;
-     margin-top: 25px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
 }
 
 
 .accordion-title{
-     font-size: 20px;
+    font-size: 20px;
 }
 
 .callout{
@@ -86,10 +84,41 @@ form{
     flex-direction: column;
     justify-content: center;
     margin-left: 30%;
-    
 }
 
+/* recipe.html */
 #container {
-    display: inline;
+    display: flex;
+    flex-direction: column;
 }
 
+#titledisplay, #timedisplay{
+    text-align: center; 
+    font-weight: bolder;
+}
+
+#imagedisplay{
+    margin-left: 38%;
+}
+
+p{
+    font-weight: bold;
+}
+
+#foringredients{
+    margin-left: 10px;
+    position: absolute;
+} 
+
+#forinstructions{
+    margin-left: 40%;
+}
+
+.vl {
+    border-left: 2px solid lightslategrey;
+    height: 450px;
+    position: absolute;
+    left: 30%;
+    margin-left: -3px;
+    top: 500px;
+}
