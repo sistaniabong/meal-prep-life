@@ -124,6 +124,7 @@ th{
      background-color:lavender;
      font-size: 20px;
      font-weight: bold;
+}
 
 /* recipe.html */
 #container {
@@ -134,6 +135,7 @@ th{
 #titledisplay, #timedisplay{
     text-align: center; 
     font-weight: bolder;
+    
 }
 
 #imagedisplay{
