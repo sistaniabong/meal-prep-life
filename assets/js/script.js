@@ -15,7 +15,7 @@ function searchInputHandler(event){
 
 // fx that makes API call based on the input search value
 var searchRecipes = function (value) {
-    var queryURL = "https://api.spoonacular.com/recipes/complexSearch?query=" + value + "&addRecipeInformation=true" + "&fillIngredients=true" + "&apiKey=" + APIKey;
+    var queryURL = "https://api.spoonacular.com/recipes/complexSearch?query=" + value + "&addRecipeInformation=true" + "&fillIngredients=true" + "&apiKey=" + APIKeyReagin;
   
     fetch(queryURL)
       .then(function (response) {
@@ -23,8 +23,8 @@ var searchRecipes = function (value) {
           response.json().then(function (data) {
             console.log(data);
             var recipes = data.results
-          displayRecipes(recipes);  //Calls function to display recipes
-          saveLocalStorage(data);
+          displayRecipes(recipes);
+          saveLocalStorage(data);  //Calls function to display recipes
           });
         } else {
           alert('Error: ' + response.statusText);
