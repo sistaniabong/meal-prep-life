@@ -22,6 +22,28 @@
         <h1 id="title">Meal Prep Life</h1>
         <a href="./index.html" id="homebtn" class="med button">Home</a> 
         <a href="./calendar.html" target=”_blank” id="calendarbtn" class="med button">Calendar</a> 
+        <div class="reveal" id="formModal" data-reveal>
+            <h1 id="title" style="font-size: 30px"> Add This Recipe To Your Meal Planner!</h1>
+            <label>
+                Name
+                <input type="text" name="name" id="name" placeholder="Type your name here">
+            </label>
+            <label>Select Day
+                <select id='day'>
+                  <option value="Monday">Monday</option>
+                  <option value="Tuesday">Tuesday</option>
+                  <option value="Wednesday">Wednesday</option>
+                  <option value="Thursday">Thursday</option>
+                  <option value="Friday">Friday</option>
+                  <option value="Saturday">Saturday</option>
+                  <option value="Sunday">Sunday</option>
+                </select>
+              </label>
+            <button class="startBtn" type="submit" target=”_blank”>Submit</button>
+            <button class="close-button" data-close aria-label="Close modal" type="button">
+              <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
     </header>
     <form>
         <input id="searchinput" type="text" placeholder="Find your recipe!"/>

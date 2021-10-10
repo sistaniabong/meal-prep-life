@@ -9,13 +9,13 @@ header{
     background-color: lavender;
     text-align: center;
 }
-#title{
+#title, #userMealPlan{
     color:lightslategrey;
     font-family: Caveat, sans-serif;
     font-size: 75px;
 }
 
-.recipeBtn, .startBtn{
+.recipeBtn, .startBtn, .addBtn{
 
      background-color: lightslategrey;
      color: white;
@@ -41,6 +41,13 @@ header{
      padding: 10px;
      margin-top: 25px;
      margin-bottom: 16px;
+}
+
+#analyzebtn{
+     background-color: lightslategrey;
+     color: white;
+     border-radius: 7px;
+     padding: 10px;
 }
 
 #searchinput{
@@ -119,11 +126,16 @@ th{
      text-align:left;
 }
 
+.card-section{
+     padding: 5px 0;
+}
+
 
 .card-divider{
-     background-color:lavender;
+     /* background-color:lavender; */
+     padding: 10px;
      font-size: 20px;
-     font-weight: bold;
+     /* font-weight: bold; */
 }
 
 /* recipe.html */
@@ -135,7 +147,7 @@ th{
 #titledisplay, #timedisplay{
     text-align: center; 
     font-weight: bolder;
-    
+
 }
 
 #imagedisplay{

@@ -23,8 +23,8 @@ var searchRecipes = function (value) {
           response.json().then(function (data) {
             console.log(data);
             var recipes = data.results
-          displayRecipes(recipes);
-          saveLocalStorage(data);  //Calls function to display recipes
+            localStorage.setItem("allRecipes", JSON.stringify(data.results));
+            displayRecipes(recipes);//Calls function to display recipes
           });
         } else {
           alert('Error: ' + response.statusText);
@@ -60,38 +60,48 @@ function displayRecipes(recipes){
         recipeEl.append(timeEl)
         // console.log(timeEl)
 
-        var buttonEl = $("<button>").attr({"id":"searchbtn"}).text("Add to Your Calendar");
+        var buttonEl = $("<button>").attr({"class":"addBtn","id":"btn-"+i}).text("Add to Your Calendar");
         
         recipeEl.append(imgEl, titleEl, timeEl, buttonEl);
         recipeDisplay.append(recipeEl)
 
         
-        // buttonEl.on("click",addRecipeHandler)
-        
+        buttonEl.on("click",addRecipeHandler)
     }
     }
 
 };
 
-function saveLocalStorage(data){
+
+function addRecipeHandler(event){
+  console.log('init addRecipeHandler');
+  var id = event.currentTarget.id;
+  var whichRecipe = id.split('-')[1];
+  var recipeIndex = parseInt(whichRecipe);
+
+  $('#btn-'+recipeIndex).attr({'data-open':"formModal"});
+
+  $('.startBtn').on('click', function(){
+    console.log('init user form')
     const recipes = (() => {
-        const searchedRecipes = localStorage.getItem('searchedRecipes');
-        return searchedRecipes === null ? []: JSON.parse(searchedRecipes);
-      })();
-    
-    recipes.push({"name": "Sistania","day": "Saturday", "Recipe": data.results[0]})
-    
-    // Use .setItem() to store object in storage and JSON.stringify to convert it as a string
-    localStorage.setItem("searchedRecipes", JSON.stringify(recipes));
-
+      const searchedRecipes = localStorage.getItem('searchedRecipes');
+      return searchedRecipes === null ? []: JSON.parse(searchedRecipes);
+    })();
+    console.log(recipes)
+    var name = $('#name').val();
+    console.log(name)
+    var day = $('#day').val();
+    console.log(day)
+    var allRecipes = JSON.parse(localStorage.getItem('allRecipes'));
+    if (allRecipes){
+      console.log('here')
+      recipes.push({"name":name ,"day": day, "Recipe": allRecipes[recipeIndex]})
+      localStorage.setItem("searchedRecipes", JSON.stringify(recipes));
+    }
+    location.href = './calendar.html';
+  });
 }
-
-// function addRecipeHandler(){
-// 
-// }
 
 
 searchInputBtn.on('click',searchInputHandler); //click event handler that calls on searchInputHandler when the submit button is clicked
-
-
 
