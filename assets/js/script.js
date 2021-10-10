@@ -51,22 +51,13 @@ function displayRecipes(recipes){
     for(var i=0; i<recipes.length; i++) { //displaying the recipe "card"
         $("#no-results").empty();
         var recipe = recipes[i];
-        // console.log(recipe)
         var recipeEl = $("<div>").attr({"class": "displayContainer"}).css({'border': '3px solid #466786','border-radius': '.3rem', 'background-color':'rgb(149, 251, 172)', 'height': 'auto', 'padding': '10px', "width":"40%"})
-        // console.log(recipeEl)
         var imgEl = $("<img>").attr({"class":"img", "src":recipe.image});
-        recipeEl.append(imgEl);
-        // console.log(imgEl)
         var titleEl = $("<h5>").attr({"class":"title"}).text(recipe.title);
-        recipeEl.append(titleEl);
-        // console.log(titleEl)
         var timeEl = $("<p>").attr({"class": "time"}).text("Cooking time: " + recipe.readyInMinutes + "mins");
-        recipeEl.append(timeEl)
-        // console.log(timeEl)
         var buttonEl = $("<button>").attr({"id":"searchbtn"}).text("Add to Your Calendar");
         
-        recipeEl.append(buttonEl)
-        // console.log(buttonEl)
+        recipeEl.append(imgEl, titleEl, timeEl, buttonEl);
         recipeDisplay.append(recipeEl)
 
         
