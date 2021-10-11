@@ -146,6 +146,7 @@ th{
 /* recipe.html */
 #container {
     display: flex;
+    width: fit-content;
 }
 
 #titledisplay, #timedisplay{
@@ -155,7 +156,9 @@ th{
 }
 
 #imagedisplay{
-    margin-left: 38%;
+    margin-left: 35%;
+    border:rgb(255, 217, 181) 5px solid;
+    border-radius: 5px;
 }
 
 p{
@@ -167,6 +170,7 @@ p{
     flex-wrap: wrap;
     width: 300px;
     margin-bottom: 20px;
+    
     
 } 
 
@@ -190,3 +194,14 @@ footer{
     background-color: lavender;
     height: 50px;
 }
+
+/* main{
+    background-color:rgb(255, 217, 181);
+} */
+
+#recipedisplay {
+ background-color: whitesmoke;
+ width: 85%;
+ margin: 0 auto;
+}
+

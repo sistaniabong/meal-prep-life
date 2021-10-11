@@ -71,9 +71,9 @@ var getRecipeInfo = function(){
     var recipeInstruct = recipeToDisplay.Recipe.analyzedInstructions[0].steps
 
     titleDisplay.text(recipeTitle).css({"font-family": "Caveat", "font-size": "40px", "margin-top": "10px"});
-    imgDisplay.attr({"src":recipeImg});
-    timeDisplay.text("Cooking time: " + recipeCookTime + "mins")
-    displayRecipe.append(titleDisplay, imgDisplay, timeDisplay)
+    imgDisplay.attr({"src":recipeImg})
+    timeDisplay.text("Cooking time: " + recipeCookTime + "mins");
+    displayRecipe.append(titleDisplay, imgDisplay, timeDisplay);
 
     //rendering Ingredients with checkboxes
     for (var i=0; i<recipeIngred.length; i++){
