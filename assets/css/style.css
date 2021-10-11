@@ -9,13 +9,14 @@ header{
     background-color: lavender;
     text-align: center;
 }
-#title {
+
+#title, #userMealPlan{
     color:lightslategrey;
     font-family: Caveat, sans-serif;
     font-size: 75px;
 }
 
-.recipeBtn, .startBtn{
+.recipeBtn, .startBtn, .addBtn{
 
     background-color: lightslategrey;
     color: white;
@@ -56,6 +57,13 @@ header{
 
 #offCanvasTop1{
     height: 350px;
+}
+
+#analyzebtn{
+     background-color: lightslategrey;
+     color: white;
+     border-radius: 7px;
+     padding: 10px;
 }
 
 #searchinput{
@@ -132,6 +140,10 @@ form{
 th{
      font-weight:100;
      text-align:left;
+}
+
+.card-section{
+     padding: 5px 0;
 }
 
 
