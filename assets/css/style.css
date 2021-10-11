@@ -17,12 +17,12 @@ header{
 
 .recipeBtn, .startBtn{
 
-     background-color: lightslategrey;
-     color: white;
-     padding: 5px;
-     border-radius: 7px;
-     height: 39px;
-     margin: 0 10px;
+    background-color: lightslategrey;
+    color: white;
+    padding: 5px;
+    border-radius: 7px;
+    height: 39px;
+    margin: 10px;
 }
 
 #homebtn{
