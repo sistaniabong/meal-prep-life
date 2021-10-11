@@ -9,7 +9,7 @@ header{
     background-color: lavender;
     text-align: center;
 }
-#title{
+#title {
     color:lightslategrey;
     font-family: Caveat, sans-serif;
     font-size: 75px;
@@ -34,13 +34,28 @@ header{
 }
 
 #searchbtn, #homebtn, #calendarbtn{
+    background-color: lightslategrey;
+    color: white;
+    border-radius: 7px;
+    padding: 10px;
+    margin-top: 25px;
+    margin-bottom: 16px;
+     
+}
 
-     background-color: lightslategrey;
-     color: white;
-     border-radius: 7px;
-     padding: 10px;
-     margin-top: 25px;
-     margin-bottom: 16px;
+.buttonnutrition {
+    background-color: lightslategrey;
+    color: white;
+    border-radius: 7px;
+    margin: 0 auto;
+    display: block;
+    padding: 10px;
+    margin-top: 25px;
+    margin-bottom: 16px;
+}
+
+#offCanvasTop1{
+    height: 350px;
 }
 
 #searchinput{
@@ -121,21 +136,22 @@ th{
 
 
 .card-divider{
-     background-color:lavender;
-     font-size: 20px;
-     font-weight: bold;
+    background-color:lavender;
+    font-size: 20px;
+    font-weight: bold;
+    color: lightslategrey;
+    text-align: center;
 }
 
 /* recipe.html */
 #container {
     display: flex;
-    flex-direction: column;
 }
 
 #titledisplay, #timedisplay{
     text-align: center; 
     font-weight: bolder;
-    
+
 }
 
 #imagedisplay{
@@ -147,19 +163,30 @@ p{
 }
 
 #foringredients{
-    margin-left: 10px;
-    position: absolute;
+    margin-left: 30px;
+    flex-wrap: wrap;
+    width: 300px;
+    margin-bottom: 20px;
+    
 } 
 
 #forinstructions{
-    margin-left: 40%;
+    margin-left: 10%;
+    flex-wrap: wrap;
+    flex:1;
+    margin-right: 30px;
+    margin-bottom: 20px;
+}
+ 
+.card {
+    border:lightslategrey solid 2px;
+    border-radius: 7px;
+    text-align: center;
+    margin: 0 auto;
+    /* align-items: center; */
 }
 
-.vl {
-    border-left: 2px solid lightslategrey;
-    height: 450px;
-    position: absolute;
-    left: 30%;
-    margin-left: -3px;
-    top: 500px;
+footer{
+    background-color: lavender;
+    height: 50px;
 }

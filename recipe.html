@@ -22,101 +22,71 @@
         <h1 id="title">Meal Prep Life</h1>
         <a href="./index.html" id="homebtn" class="med button">Home</a> 
         <a href="./calendar.html" target=”_blank” id="calendarbtn" class="med button">Calendar</a> 
+        
     </header>
-
-
-
+    
     <main id="recipedisplay">
         <h3 id="titledisplay"></h3>
         <img id="imagedisplay"/>
         <p id="timedisplay"></p>
-        <div class="card" style="width: 100%">
-            <div class="card-divider">
-                Nutrition Checker
-            </div>
-            <div class="card-section">
-                <ul class="conversion">
-                    <li>
-                        <input class="searchinput" id="value" type="text" placeholder="1 cup of rice"/>
-                    </li>
-                    <input id="searchbtn" type="submit" value="Analyze">
-                </ul>
-            </div>
-            <div class="card-section result">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Ingredient</th>
-                            <th>Calories</th>
-                            <th>Weight</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <th id="food"></th>
-                        <th id="cal"></th>
-                        <th id="weight"></th>
-                    </tbody>
-                </table>
+
+        <div class="cell">
+            <div class="off-canvas-wrapper">
+              <div class="off-canvas position-top" id="offCanvasTop1" data-off-canvas>
+                
+                <div class="card" style="width: 75%">
+                    <div class="card-divider">
+                        Nutrition Checker
+                    </div>
+                    <div class="card-section">
+                        <ul class="conversion">
+                            <li>
+                                <input class="searchinput" id="value" type="text" placeholder="1 cup of rice"/>
+                            </li>
+                            <div id="errormessage"></div>
+                            <input id="searchbtn" type="submit" value="Analyze">
+                        </ul>
+                    </div>
+                    <div class="card-section result">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Ingredient</th>
+                                    <th>Calories</th>
+                                    <th>Weight</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <th id="food"></th>
+                                <th id="cal"></th>
+                                <th id="weight"></th>
+                            </tbody>
+                        </table>
+                    </div>
+                  </div>
+                  <button class="close-button" aria-label="Close menu" type="button" data-close>
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+              <div class="off-canvas-content" data-off-canvas-content>
+              </div>
             </div>
           </div>
     </main>
-
-    <div class="row medium-uncollapse large-collapse">
-        <div class="small-3 columns">
-            <section id="foringredients">
-                <p>Ingredients</p>
-            </section>
-        </div>
-        <div class="small-9 columns">
-            <section id="forinstructions">
-                <p>Instructions</p>
-            </section>
-        </div>
-    </div>
-
-<!-- 
-
+    
+    <button type="button" class="buttonnutrition" data-toggle="offCanvasTop1">Nutrition Checker</button> 
     <article id="container">
     <section id="foringredients">
         <p>Ingredients</p>
     </section>
-    <div class="vl"></div>
     <section id="forinstructions">
         <p>Instructions</p>
     </section>
-    </article> -->
+    </article>
 
-    <!-- <div class="card" style="width: 400px;">
-        <div class="card-divider">
-            Nutrition Checker
-        </div>
-        <div class="card-section">
-            <ul class="conversion">
-                <li>
-                    <input class="searchinput" id="value" type="text" placeholder="1 cup of rice"/>
-                </li>
-                <input id="searchbtn" type="submit" value="Analyze">
-            </ul>
-        </div>
-        <div class="card-section result">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Ingredient</th>
-                        <th>Calories</th>
-                        <th>Weight</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <th id="food"></th>
-                    <th id="cal"></th>
-                    <th id="weight"></th>
-                </tbody>
-            </table>
-        </div>
-      </div> -->
-
-
+    <footer>
+        <div></div>
+    </footer>
 
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
