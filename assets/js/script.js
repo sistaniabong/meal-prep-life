@@ -40,33 +40,33 @@ function displayRecipes(recipes){
     console.log(recipes)
     // If user types wrong name, it should display "No results..."
     if (recipes == 0 ){ 
-        $("#no-results").css({"display":"inline", "font-size":"50px"})
-        // $("#no-resultsimg").src("")  //figure out how to add img
-        recipeDisplay.remove();
-        searchInputEl.empty(); //should empty the search bar
+        console.log('hhehehhehehe')
+        $("#no-results").text('No Results...Try again').css({'background':"thistle"});
+        recipeDisplay.empty();
+        searchInputEl.val(""); //should empty the search bar
 
     }
     else {
-    recipeDisplay.empty();
-    for(var i=0; i<recipes.length; i++) { //displaying the recipe "card"
-        $("#no-results").empty();
-        var recipe = recipes[i];
-        var recipeEl = $("<div>").attr({"class": "displayContainer"}).css({'border': '3px solid #466786','border-radius': '.3rem', 'background-color':'rgb(255, 217, 181)', 'height': 'auto', 'padding': '10px', "width":"40%", "margin-bottom": "3%"})
-        var imgEl = $("<img>").attr({"class":"img", "src":recipe.image});
-        var titleEl = $("<h5>").attr({"class":"title"}).text(recipe.title);
-        recipeEl.append(titleEl);
-        // console.log(titleEl)
-        var timeEl = $("<p>").attr({"class": "time"}).text("Cooking time: " + recipe.readyInMinutes + " mins");
-        recipeEl.append(timeEl)
-        // console.log(timeEl)
+      recipeDisplay.empty();
+      for(var i=0; i<recipes.length; i++) { //displaying the recipe "card"
+          $("#no-results").text("").css({"background":"whitesmoke"})
+          var recipe = recipes[i];
+          var recipeEl = $("<div>").attr({"class": "displayContainer"}).css({'border': '3px solid #466786','border-radius': '.3rem', 'background-color':'rgb(255, 217, 181)', 'height': 'auto', 'padding': '10px', "width":"40%", "margin-bottom": "3%"})
+          var imgEl = $("<img>").attr({"class":"img", "src":recipe.image});
+          var titleEl = $("<h5>").attr({"class":"title"}).text(recipe.title);
+          recipeEl.append(titleEl);
+          // console.log(titleEl)
+          var timeEl = $("<p>").attr({"class": "time"}).text("Cooking time: " + recipe.readyInMinutes + " mins");
+          recipeEl.append(timeEl)
+          // console.log(timeEl)
 
-        var buttonEl = $("<button>").attr({"class":"addBtn","id":"btn-"+i}).text("Add to Your Calendar");
-        
-        recipeEl.append(imgEl, titleEl, timeEl, buttonEl);
-        recipeDisplay.append(recipeEl)
+          var buttonEl = $("<button>").attr({"class":"addBtn","id":"btn-"+i}).text("Add to Your Calendar");
+          
+          recipeEl.append(imgEl, titleEl, timeEl, buttonEl);
+          recipeDisplay.append(recipeEl)
 
-        
-        buttonEl.on("click",addRecipeHandler)
+          
+          buttonEl.on("click",addRecipeHandler)
     }
     }
 

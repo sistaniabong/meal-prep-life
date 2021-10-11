@@ -30,15 +30,20 @@ var searchNutrition = function (value) {
         if (response.ok) {
           response.json().then(function (data) {
             console.log(data);
-            $('#food').text(value);
-            $('#cal').text(data.calories + " kcal");
-            $('#weight').text(data.totalWeight + " g");
+            if(data.totalWeight === 0 && data.calories === 0){
+                errorMess
+                $('#food').text("");
+                $('#cal').text("");
+                $('#weight').text("");
+            } else {
+                errorMess.empty();
+                $('#food').text(value);
+                $('#cal').text(data.calories + " kcal");
+                $('#weight').text(data.totalWeight + " g");
+            }
             // errorMess.empty();
             // apiError.empty();
           });
-        }
-         else if(data.totalWeight === 0 && data.calories === 0 ){
-          errorMess
         }
       })
       .catch(function (error) {

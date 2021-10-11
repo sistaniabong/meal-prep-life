@@ -104,7 +104,18 @@ form{
 }
 
 #no-results{
-    display: none;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    /* background-color: thistle; */
+    padding: 20px;
+    font-family: Caveat, sans-serif;
+    width: 50%;
+    
+
+    
 }
 
 .displayContainer{
