@@ -6,23 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- "Foundation" CSS framework-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Open+Sans&display=swap" rel="stylesheet">
+    <!-- CSS -->
     <link rel="stylesheet" href="./assets/css/style.css"></link>
-    <title>Meal Prep Life</title>
+    <title>My Calendar</title>
 </head>
 <body>
     <header class="userHeader">
         <h1 id="userMealPlan"></h1>
         <h2 id="currentDay"></h2>
-        <div class="reveal" id="exampleModal1" data-reveal>
+        <div class="reveal" id="recipeModal" data-reveal>
             <img id="recipeImg" src="#">
             <h1 id="title"></h1>
             <h2 id="time"></h2>
             <h2 id="servings"></h2>
-            <button class="startBtn" type="button">Start Cooking</button>
+            <button class="startBtn" type="button" target=”_blank”>Start Cooking</button>
             <button class="close-button" data-close aria-label="Close modal" type="button">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
+          <a href="./index.html" id="homebtn" class="med button">Home</a>
     </header>
     <main>
 
@@ -72,6 +81,10 @@
 
 
     </main>
+
+    <footer>
+      <div></div>
+    </footer>
 
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

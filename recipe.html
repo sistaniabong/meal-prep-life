@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- "Foundation" CSS framework-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Open+Sans&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="./assets/css/style.css"></link>
+    <title>Your Recipe</title>
+</head>
+<body>
+    <header>
+        <h1 id="title">Meal Prep Life</h1>
+        <a href="./index.html" id="homebtn" class="med button">Home</a> 
+        <a href="./calendar.html" target=”_blank” id="calendarbtn" class="med button">Calendar</a> 
+        
+    </header>
+    
+    <main>
+    <div id="recipedisplay">
+        <h3 id="titledisplay"></h3>
+        <img id="imagedisplay"/>
+        <p id="timedisplay"></p>
+
+        <div class="cell">
+            <div class="off-canvas-wrapper">
+              <div class="off-canvas position-top" id="offCanvasTop1" data-off-canvas>
+                
+                <div class="card" style="width: 75%">
+                    <div class="card-divider">
+                        Nutrition Checker
+                    </div>
+                    <div class="card-section">
+                        <ul class="conversion">
+                            <li>
+                                <input class="searchinput" id="value" type="text" placeholder="1 cup of rice"/>
+                            </li>
+                            <div id="errormessage"></div>
+                            <input id="analyzebtn" type="submit" value="Analyze">
+                        </ul>
+                    </div>
+                    <div class="card-section result">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Ingredient</th>
+                                    <th>Calories</th>
+                                    <th>Weight</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <th id="food"></th>
+                                <th id="cal"></th>
+                                <th id="weight"></th>
+                            </tbody>
+                        </table>
+                    </div>
+                  </div>
+                  <button class="close-button" aria-label="Close menu" type="button" data-close>
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+              <div class="off-canvas-content" data-off-canvas-content>
+              </div>
+            </div>
+          </div>
+        </div>
+        </main>
+    
+    <button type="button" class="buttonnutrition" data-toggle="offCanvasTop1">Nutrition Checker</button> 
+    <article id="container">
+        <section id="foringredients">
+            <p>Ingredients</p>
+        </section>
+        <section id="forinstructions">
+            <p>Instructions</p>
+        </section>
+    </article>
+
+    <footer>
+        <div></div>
+    </footer>
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js" integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
+    <script>
+        $(document).foundation();
+      </script>
+    <script src="assets/js/recipe.js"></script>
+</body>
+
+</html>

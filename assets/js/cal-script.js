@@ -6,14 +6,14 @@ var currentDayEl = $('#currentDay');
 function displayHeader(){
     var recipes = JSON.parse(localStorage.getItem('searchedRecipes'));
     var userName = recipes[0].name
-    userNameHeaderEl.text(userName +"'s Meal Planner").css({"color":"lightslategrey","padding-top": "50px"});
+    userNameHeaderEl.text(userName +"'s Meal Planner").css({"color":"lightslategrey","padding-top": "50px", "font-family": "Caveat", "font-size":"60px"});
     // userHeaderEl.append(userNameHeaderEl).css({"text-align": "center"});
 }
 
 // date display on the header
 setInterval(function(){
     var rightNow = moment().format('dddd, MMMM Do YYYY');
-    currentDayEl.text(rightNow).css({"color":"lightslategrey", "font-size":"20px","padding-bottom": "30px"});
+    currentDayEl.text(rightNow).css({"color":"lightslategrey", "font-size":"40px","padding-bottom": "30px", "font-family": "Caveat"});
 },0);
 
 function selectToday(){
@@ -36,37 +36,33 @@ function populateCal(){
         var selectedDay = recipe.day;
         var recipeTitle = recipe.Recipe.title;
         var content = $(".accordion-title."+selectedDay.toLowerCase()).siblings();
-        content.append($('<button>').attr({'class':"recipeBtn",'id': selectedDay+"Btn", 'data-open':"exampleModal1"}).text(recipeTitle));
+        // content.append($('<button>').attr({'class':"recipeBtn",'id': selectedDay+"Btn", 'data-open':"recipeModal"}).text(recipeTitle));
+        content.append($('<button>').attr({'class':"recipeBtn",'id': "btn-"+i, 'data-open':"recipeModal"}).text(recipeTitle));
         
     }
 }
 
 function previewRecipe(event){
-    console.log(event);
-    console.log(event.currentTarget.id);
-    var dayID = event.currentTarget.id;
-    var day = dayID.split('Btn')[0];
+    var id = event.currentTarget.id;
+    // var day = dayID.split('Btn')[0];
+    var whichRecipe = id.split('-')[1];
+    var recipeIndex = parseInt(whichRecipe);
+    console.log(recipeIndex)
     var recipes = JSON.parse(localStorage.getItem('searchedRecipes'));
-    for (var i=0;i<recipes.length;i++){
-        console.log(recipes[i].day)
-        if (day==recipes[i].day) {
-            var recipe = recipes[i].Recipe;
-            console.log(recipe)  
-            $('#recipeImg').attr({"src":recipe.image});
-            $('#title').text(recipe.title).css({'font-size':'30px','font-weight':"bold"});
-            $('#time').text("Cooking Time: "+recipe.readyInMinutes+" mins").css({'font-size':'20px', 'color':'lightslategrey'});
-            $('#servings').text("Servings: "+recipe.servings).css({'font-size':'20px', 'color':'lightslategrey'});
-            $('.startBtn').attr({'id':day});
-        }
-    }
+    var recipe = recipes[recipeIndex].Recipe;
+    console.log(recipe)  
+    $('#recipeImg').attr({"src":recipe.image});
+    $('#title').text(recipe.title).css({'font-size':'30px','font-weight':"bold"});
+    $('#time').text("Cooking Time: "+recipe.readyInMinutes+" mins").css({'font-size':'20px', 'color':'lightslategrey'});
+    $('#servings').text("Servings: "+recipe.servings).css({'font-size':'20px', 'color':'lightslategrey'});
+    $('.startBtn').attr({'id':recipeIndex});
     
 }
 
-function renderRecipeDetail(event){
-    console.log(event.currentTarget.id);
+function redirectHandler(event){
+    var recipeIndex = event.currentTarget.id;
+    location.href = './recipe.html?recipe=' + recipeIndex;
 }
-
-
 
 
 
@@ -74,4 +70,4 @@ displayHeader();
 selectToday();
 populateCal();
 $('.recipeBtn').on('click', previewRecipe);
-$('.startBtn').on('click',renderRecipeDetail);
+$('.startBtn').on('click',redirectHandler);
