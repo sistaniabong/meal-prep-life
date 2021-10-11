@@ -1,6 +1,6 @@
 var valEl = $('#value'); //select input value element
 
-var searchBtnEl = $('#searchbtn')
+var searchBtnEl = $('#analyzebtn')
 
 
 var APIKey = "8jtm7TlN22DEZthcqa58FegSVmifcY9ldVQ4tx81P1Zi4vwR"; //API key for spoonacular
