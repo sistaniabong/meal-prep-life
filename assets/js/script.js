@@ -51,7 +51,7 @@ function displayRecipes(recipes){
     for(var i=0; i<recipes.length; i++) { //displaying the recipe "card"
         $("#no-results").empty();
         var recipe = recipes[i];
-        var recipeEl = $("<div>").attr({"class": "displayContainer"}).css({'border': '3px solid #466786','border-radius': '.3rem', 'background-color':'rgb(149, 251, 172)', 'height': 'auto', 'padding': '10px', "width":"40%"})
+        var recipeEl = $("<div>").attr({"class": "displayContainer"}).css({'border': '3px solid #466786','border-radius': '.3rem', 'background-color':'rgb(255, 217, 181)', 'height': 'auto', 'padding': '10px', "width":"40%", "margin-bottom": "3%"})
         var imgEl = $("<img>").attr({"class":"img", "src":recipe.image});
         var titleEl = $("<h5>").attr({"class":"title"}).text(recipe.title);
         recipeEl.append(titleEl);

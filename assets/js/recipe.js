@@ -22,6 +22,9 @@ var searchNutrition = function (value) {
   
     var queryURL = "https://api.edamam.com/api/nutrition-data?app_id=b2c2e357&app_key=c44b645c4ff77bb33f829e8a4beb2860&nutrition-type=cooking&ingr="+value;
 
+    var apiError = $("#errormessage").text('Unable to connect to the API'); 
+    var errorMess = $("#errormessage").text("*Please type in a valid unit ex.(1 cup of rice)").css({"color":"red"})
+
     fetch(queryURL)
       .then(function (response) {
         if (response.ok) {
@@ -30,13 +33,16 @@ var searchNutrition = function (value) {
             $('#food').text(value);
             $('#cal').text(data.calories + " kcal");
             $('#weight').text(data.totalWeight + " g");
+            // errorMess.empty();
+            // apiError.empty();
           });
-        } else {
-          alert('Error: ' + response.statusText);
+        }
+         else if(data.totalWeight === 0 && data.calories === 0 ){
+          errorMess
         }
       })
       .catch(function (error) {
-        alert('Unable to connect to the API');
+        apiError
       });
   };
 
@@ -63,12 +69,11 @@ var getRecipeInfo = function(){
     var recipeImg = recipeToDisplay.Recipe.image
     var recipeIngred = recipeToDisplay.Recipe.extendedIngredients
     var recipeInstruct = recipeToDisplay.Recipe.analyzedInstructions[0].steps
-    
 
-    titleDisplay.text(recipeTitle);
-    imgDisplay.attr({"src":recipeImg});
-    timeDisplay.text("Cooking time: " + recipeCookTime + "mins")
-    displayRecipe.append(titleDisplay, imgDisplay, timeDisplay)
+    titleDisplay.text(recipeTitle).css({"font-family": "Caveat", "font-size": "40px", "margin-top": "10px"});
+    imgDisplay.attr({"src":recipeImg})
+    timeDisplay.text("Cooking time: " + recipeCookTime + "mins");
+    displayRecipe.append(titleDisplay, imgDisplay, timeDisplay);
 
     //rendering Ingredients with checkboxes
     for (var i=0; i<recipeIngred.length; i++){

@@ -6,14 +6,14 @@ var currentDayEl = $('#currentDay');
 function displayHeader(){
     var recipes = JSON.parse(localStorage.getItem('searchedRecipes'));
     var userName = recipes[0].name
-    userNameHeaderEl.text(userName +"'s Meal Planner").css({"color":"lightslategrey","padding-top": "50px"});
+    userNameHeaderEl.text(userName +"'s Meal Planner").css({"color":"lightslategrey","padding-top": "50px", "font-family": "Caveat", "font-size":"60px"});
     // userHeaderEl.append(userNameHeaderEl).css({"text-align": "center"});
 }
 
 // date display on the header
 setInterval(function(){
     var rightNow = moment().format('dddd, MMMM Do YYYY');
-    currentDayEl.text(rightNow).css({"color":"lightslategrey", "font-size":"20px","padding-bottom": "30px"});
+    currentDayEl.text(rightNow).css({"color":"lightslategrey", "font-size":"40px","padding-bottom": "30px", "font-family": "Caveat"});
 },0);
 
 function selectToday(){
