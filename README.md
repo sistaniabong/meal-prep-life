@@ -1,33 +1,41 @@
-# meal-prep-life
+# Meal-prep-life
 
 ## Description
-Meal Prep Life makes it easier for the everyday person with a busy schedule to find recipes they want and save them to their calendar. When they are ready to cook ,they can simply go to their calendar and click on the recipe they want to start cooking. On the recipe page, they will find that they are able to easily keep track of where they are in the recipe with the use of the checkbowes next to all the ingredients and instructions. 
+Meal Prep Life makes it easier for the everyday person with a busy schedule to find recipes they want and save them to their calendar. When they are ready to cook, they can simply go to their calendar and click on the recipe they want to start cooking. On the recipe page, they will find that they are able to easily keep track of where they are in the recipe with the use of the checkboxes next to all the ingredients and instructions. 
 
 ## User Story
 ```
-AS A novice cook, 
+AS A novice(busy student?) cook, 
 I WANT to search for a recipe,
 SO THAT I can plan my meals for the week and cook them when I get ready.
 ```
 ## Acceptance Criteria
 ```
-GIVEN a website with a 
-WHEN I search for a city
-THEN I am presented with current and future conditions for that city and that city is added to the search history
-WHEN I view current weather conditions for that city
-THEN I am presented with the city name, the date, an icon representation of weather conditions, the temperature, the humidity, the wind speed, and the UV index
-WHEN I view the UV index
-THEN I am presented with a color that indicates whether the conditions are favorable, moderate, or severe
-WHEN I view future weather conditions for that city
-THEN I am presented with a 5-day forecast that displays the date, an icon representation of weather conditions, the temperature, the wind speed, and the humidity
-WHEN I click on a city in the search history
-THEN I am again presented with current and future conditions for that city
+GIVEN a website with a search bar
+WHEN I search for a recipe
+THEN I am presented with the different recipe variations for the recipe I searched
+WHEN I click the button under the recipe that I have selected 
+THEN I am presented with a form where I can type my name and choose the day I want to add the recipe to
+WHEN I view my calendar
+THEN I am presented with today's date and a weekly calendar
+WHEN I click on the day that I put my recipe under
+THEN I am presented with a preview of the recipe and a button to start cooking
+WHEN I click on the 'start cooking' button
+THEN I am presented with the full recipe with checkboxes next to the ingredients and instructions and a 'Nutrition Checker' button
+WHEN I click on the 'Nutrition Checker' button
+THEN I am presented with a drop down bar which houses the nutrition checker
+WHEN I insert an ingredient and value into the nutrition checker
+THEN I am presented with the calories and weight of that ingredient
 ```
 ## Features
+- Calendar
+- Checkboxes next to the ingredients and instructions
+- Nutrition Checker
 
 ## Mock-Up
 The following GIF displays the web application's appearance and functionality:
 ![Meal Prep Life demo]()
+
 ## Review
 To review the refactored code, please go to the [repository](https://github.com/sistaniabong/meal-prep-life)
 
