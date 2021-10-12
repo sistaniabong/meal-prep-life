@@ -22,21 +22,19 @@ var searchNutrition = function (value) {
   
     var queryURL = "https://api.edamam.com/api/nutrition-data?app_id=b2c2e357&app_key=c44b645c4ff77bb33f829e8a4beb2860&nutrition-type=cooking&ingr="+value;
 
-    var apiError = $("#errormessage").text('Unable to connect to the API'); 
-    var errorMess = $("#errormessage").text("*Please type in a valid unit ex.(1 cup of rice)").css({"color":"red"})
-
     fetch(queryURL)
       .then(function (response) {
         if (response.ok) {
           response.json().then(function (data) {
             console.log(data);
             if(data.totalWeight === 0 && data.calories === 0){
-                errorMess
+                $("#errormessage").text("*Please type in a valid unit ex.(1 cup of rice)").css({"color":"red"})
                 $('#food').text("");
                 $('#cal').text("");
                 $('#weight').text("");
             } else {
-                errorMess.empty();
+                console.log('herererere')
+                $("#errormessage").text("");
                 $('#food').text(value);
                 $('#cal').text(data.calories + " kcal");
                 $('#weight').text(data.totalWeight + " g");
@@ -47,7 +45,7 @@ var searchNutrition = function (value) {
         }
       })
       .catch(function (error) {
-        apiError
+        $("#errormessage").text('Unable to connect to the API'); 
       });
   };
 

@@ -7,7 +7,6 @@ function displayHeader(){
     var recipes = JSON.parse(localStorage.getItem('searchedRecipes'));
     var userName = recipes[0].name
     userNameHeaderEl.text(userName +"'s Meal Planner").css({"color":"lightslategrey","padding-top": "50px", "font-family": "Caveat", "font-size":"60px"});
-    // userHeaderEl.append(userNameHeaderEl).css({"text-align": "center"});
 }
 
 // date display on the header

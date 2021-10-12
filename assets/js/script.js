@@ -1,10 +1,10 @@
 var searchInputEl = $('#searchinput'); //select input box element
 var searchInputBtn = $('#searchbtn'); //select submit button
-var recipeDisplay = $('.recipe-display');
+var recipeDisplay = $('.recipe-display'); //select element to display recipe results
+//API key for spoonacular
+var APIKey = "17f44d660ddb486fa6457a9e29671fd3";
 
 
-var APIKey = "49c0740aebdf47ebacf6832cdff2c7c4"; //API key for spoonacular
-var APIKeyReagin = "17f44d660ddb486fa6457a9e29671fd3";
 // fx to get search value and call on searchRecipes() fx to make API call 
 function searchInputHandler(event){
     event.preventDefault();
@@ -15,7 +15,8 @@ function searchInputHandler(event){
 
 // fx that makes API call based on the input search value
 var searchRecipes = function (value) {
-    var queryURL = "https://api.spoonacular.com/recipes/complexSearch?query=" + value + "&addRecipeInformation=true" + "&fillIngredients=true" + "&apiKey=" + APIKeyReagin;
+    // query URL for spoonacular
+    var queryURL = "https://api.spoonacular.com/recipes/complexSearch?query=" + value + "&addRecipeInformation=true" + "&fillIngredients=true" + "&apiKey=" + APIKey;
   
     fetch(queryURL)
       .then(function (response) {
@@ -27,12 +28,11 @@ var searchRecipes = function (value) {
             displayRecipes(recipes);//Calls function to display recipes
           });
         } else {
-          alert('Error: ' + response.statusText);
+          console.log(response)
+          $("#no-results").text('Unable to connect to the API: Error ' + response.status).css({'background':"thistle"});
         }
       })
-      .catch(function (error) {
-        alert('Unable to connect to the API');
-      });
+
   };
 
 
@@ -40,6 +40,7 @@ function displayRecipes(recipes){
     console.log(recipes)
     // If user types wrong name, it should display "No results..."
     if (recipes == 0 ){ 
+        console.log('hhehehhehehe')
         $("#no-results").text('No Results...Try again').css({'background':"thistle"});
         recipeDisplay.empty();
         searchInputEl.val(""); //should empty the search bar
