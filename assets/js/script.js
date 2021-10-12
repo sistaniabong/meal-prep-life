@@ -55,17 +55,13 @@ function displayRecipes(recipes){
           var imgEl = $("<img>").attr({"class":"img", "src":recipe.image});
           var titleEl = $("<h5>").attr({"class":"title"}).text(recipe.title);
           recipeEl.append(titleEl);
-          // console.log(titleEl)
           var timeEl = $("<p>").attr({"class": "time"}).text("Cooking time: " + recipe.readyInMinutes + " mins");
           recipeEl.append(timeEl)
-          // console.log(timeEl)
 
           var buttonEl = $("<button>").attr({"class":"addBtn","id":"btn-"+i}).text("Add to Your Calendar");
           
           recipeEl.append(imgEl, titleEl, timeEl, buttonEl);
           recipeDisplay.append(recipeEl)
-
-          
           buttonEl.on("click",addRecipeHandler)
     }
     }
@@ -73,6 +69,7 @@ function displayRecipes(recipes){
 };
 
 
+//fx that reveal the form modal for user to submit their name and recipe
 function addRecipeHandler(event){
   console.log('init addRecipeHandler');
   var id = event.currentTarget.id;
@@ -81,24 +78,24 @@ function addRecipeHandler(event){
 
   $('#btn-'+recipeIndex).attr({'data-open':"formModal"});
 
+  // click event listener that is triggered when user clicks the submit button and 
+  // save the user's inputs to local storage
   $('.startBtn').on('click', function(){
     console.log('init user form')
     const recipes = (() => {
       const searchedRecipes = localStorage.getItem('searchedRecipes');
       return searchedRecipes === null ? []: JSON.parse(searchedRecipes);
     })();
-    console.log(recipes)
     var name = $('#name').val();
-    console.log(name)
     var day = $('#day').val();
-    console.log(day)
     var allRecipes = JSON.parse(localStorage.getItem('allRecipes'));
-    if (allRecipes){
-      console.log('here')
+    if (allRecipes && name && day){
+      console.log('saving user inputs to local storage')
       recipes.push({"name":name ,"day": day, "Recipe": allRecipes[recipeIndex]})
       localStorage.setItem("searchedRecipes", JSON.stringify(recipes));
-    }
-    location.href = './calendar.html';
+      location.href = './calendar.html'; // redirect to calendar.html upon submission
+    } 
+
   });
 }
 

@@ -1,13 +1,15 @@
+// elements selector
 var userHeaderEl = $('.header');
 var userNameHeaderEl = $('#userMealPlan');
 var currentDayEl = $('#currentDay');
 
 
-function displayHeader(){
-    var recipes = JSON.parse(localStorage.getItem('searchedRecipes'));
-    var userName = recipes[0].name
-    userNameHeaderEl.text(userName +"'s Meal Planner").css({"color":"lightslategrey","padding-top": "50px", "font-family": "Caveat", "font-size":"60px"});
-}
+//
+// function displayHeader(){
+//     var recipes = JSON.parse(localStorage.getItem('searchedRecipes'));
+//     var userName = recipes[0].name
+//     userNameHeaderEl.text(userName +"'s Meal Planner").css({"color":"lightslategrey","padding-top": "50px", "font-family": "Caveat", "font-size":"60px"});
+// }
 
 // date display on the header
 setInterval(function(){
@@ -21,13 +23,16 @@ function selectToday(){
     console.log(today.toLowerCase());
     console.log($(".accordion-title."+today.toLowerCase()).parent());
     console.log($(".accordion-title."+today.toLowerCase()).siblings());
-    $(".accordion-title."+today.toLowerCase()).parent().css({'background':'yellow'});
+    $(".accordion-title."+today.toLowerCase()).parent().css({'background':'thistle'});
 
 }
 
 
 function populateCal(){
     // retrieving scores from the local storage
+    var recipes = JSON.parse(localStorage.getItem('searchedRecipes'));
+    var userName = recipes[0].name
+    userNameHeaderEl.text(userName +"'s Meal Planner").css({"color":"lightslategrey","padding-top": "50px", "font-family": "Caveat", "font-size":"60px"});
     var recipes = JSON.parse(localStorage.getItem('searchedRecipes'));
     console.log(recipes)
     for (var i=0;i<recipes.length;i++){
@@ -65,7 +70,7 @@ function redirectHandler(event){
 
 
 
-displayHeader();
+// displayHeader();
 selectToday();
 populateCal();
 $('.recipeBtn').on('click', previewRecipe);
