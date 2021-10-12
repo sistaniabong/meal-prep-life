@@ -40,7 +40,6 @@ function displayRecipes(recipes){
     console.log(recipes)
     // If user types wrong name, it should display "No results..."
     if (recipes == 0 ){ 
-        console.log('hhehehhehehe')
         $("#no-results").text('No Results...Try again').css({'background':"thistle"});
         recipeDisplay.empty();
         searchInputEl.val(""); //should empty the search bar
