@@ -5,10 +5,11 @@ Meal Prep Life makes it easier for the everyday person with a busy schedule to f
 
 ## User Story
 ```
-AS A novice(busy student?) cook, 
+AS A novice busy college student, 
 I WANT to search for a recipe,
-SO THAT I can plan my meals for the week and cook them when I get ready.
+SO THAT I can plan my meals for the week and cook them when I get ready
 ```
+
 ## Acceptance Criteria
 ```
 GIVEN a website with a search bar
@@ -28,16 +29,19 @@ WHEN I insert an ingredient and value into the nutrition checker
 THEN I am presented with the calories and weight of that ingredient
 ```
 ## Features
-- Calendar
-- Checkboxes next to the ingredients and instructions
-- Nutrition Checker
+This meal planner application includes the following features:
+- Search different recipes using keyword
+- Save user's recipe on a calendar based on their selected day
+- Preview recipe before start cooking
+- Display checkboxes next to the ingredients and instructions enabling the user to track their cooking steps
+- Search nutritional information of an ingredient
 
 ## Mock-Up
 The following GIF displays the web application's appearance and functionality:
-![Meal Prep Life demo]()
+![Meal Prep Life demo](./assets/images/meal-prep.gif)
 
 ## Review
 To review the refactored code, please go to the [repository](https://github.com/sistaniabong/meal-prep-life)
 
 ## Deploy
-To deploy this web application, please click on this [link]()
+To deploy this web application, please click on this [link](https://sistaniabong.github.io/meal-prep-life/)
