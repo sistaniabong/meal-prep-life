@@ -36,6 +36,10 @@ form {
      align-items: center;
 }
 
+ul.conversion{
+     list-style-type: none;
+}
+
 button{
      font-family: var(--button-font);
  }
